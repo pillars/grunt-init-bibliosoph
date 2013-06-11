@@ -1,0 +1,3 @@
+[submodule "root"]
+	path = root
+	url = git@github.com:pillars/bibliosoph.git
