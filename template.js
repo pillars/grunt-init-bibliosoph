@@ -14,9 +14,8 @@ exports.description = 'Create a bibliosoph documentation base site.';
 // Template-specific notes to be displayed before question prompts.
 exports.notes = 'Here is some detail about the upcoming questions:\n\n' +
   'name             : the name of your project\n' +
-  'github           : the github url to your repository (optional)\n' +
-  '  - bitbucket    : the bitbucket url to your repository (optional)\n' +
-  '    - repository : the url to your repository (optional)\n' +
+  'repository_host  : github, bitbucket or other\n' +
+  'repository       : the url to your repository (optional)\n' +
   'download         : the download link of your project (optional)\n' +
   'analytics_id     : the UA code for Google Analytics (optional)\n' +
   'domain           : the domain the site will be hosted under (optional)\n' +
@@ -43,15 +42,8 @@ exports.template = function(grunt, init, done) {
     // Prompt for these values.
     init.prompt('name'),
     init.prompt('description'),
-    init.prompt('github', function(value, props, done) {
-      if(value == '') {
-        init.prompts['bitbucket'] = init.prompt('bitbucket', function(value, props, done) {
-          init.prompts['repository'] = init.prompt('repository');
-          done();
-        });
-      }
-      done();
-    }),
+    init.prompt('repository_host', 'github'),
+    init.prompt('repository_url'),
     init.prompt('download'),
     init.prompt('analytics_id'),
     init.prompt('domain'),
@@ -61,7 +53,6 @@ exports.template = function(grunt, init, done) {
     init.prompt('author_name'),
     init.prompt('author_url')
   ], function(err, props) {
-    // props.keywords = [];
 
     // Files to copy (and process).
     var files = init.filesToCopy(props);
