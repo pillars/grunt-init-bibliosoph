@@ -23,7 +23,7 @@ exports.notes = 'Here is some detail about the upcoming questions:\n\n' +
   '                   just the domain, like google.com, no subdomain\n' +
   'menu             : true or false, wether you want a menu or not\n' +
   'licenses         : license for your work: MIT, MPL-2.0, GPL-2.0, or Apache-2.0\n' +
-  'author_*         : info about you for the package.json\n' +
+  'author_*         : info about you for the package.json\n'
   ;
 
 // Template-specific notes to be displayed after question prompts.
