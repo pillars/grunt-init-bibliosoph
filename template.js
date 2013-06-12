@@ -21,7 +21,8 @@ exports.notes = 'Here is some detail about the upcoming questions:\n\n' +
   'domain           : the domain the site will be hosted under (optional)\n' +
   '                   just the domain, like google.com, no subdomain\n' +
   'menu             : true or false, wether you want a menu or not\n' +
-  'licenses         : license for your work: MIT, MPL-2.0, GPL-2.0, or Apache-2.0\n' +
+  'licenses         : license for your project: MIT, MPL-2.0, GPL-2.0, or Apache-2.0\n' +
+  'version          : version of your project\n' +
   'author_*         : info about you for the package.json\n'
   ;
 
@@ -49,6 +50,7 @@ exports.template = function(grunt, init, done) {
     init.prompt('domain'),
     init.prompt('menu', 'true'),
     init.prompt('licenses'),
+    init.prompt('version'),
     init.prompt('author_email'),
     init.prompt('author_name'),
     init.prompt('author_url')

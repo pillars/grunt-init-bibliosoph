@@ -1,0 +1,12 @@
+{
+    "site": {
+        "name"          : "<%= name %>"
+      , "domain"        : "<%= domain %>"
+      , "analytics_id"  : "<%= analytics_id %>"
+      , "github"        : "<%= github %>"
+      , "bitbucket"     : "<%= bitbucket %>"
+      , "repository"    : "<%= repository %>"
+      , "download"      : "<%= download %>"
+      , "menu"          : <%= menu %>
+    }
+}
